@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type= "text/css" href="{{url_for('static',filename='styles/style.css')}}">
+      <script src="{{url_for('static',filename='main.js')}}"></script> 
+      <title>Hangman</title>
+   </head>
+   <body>
+      <h1>Hangman</h1>
+      <section class='main_place' id='strt'>
+         <h2>Choose category and start game</h2>
+         <form action="{{ url_for('game') }}" name='option' method="post">
+            <div class='btnn-rw'>
+               <label for="category">Category</label><br>
+               <select id="category" name="category" class='sel' selected='all'>
+                  {%for cat in category%}
+                  <option value="{{cat}}" id="{{cat}}" class='optCat'>{{cat}}</option>
+                  {%endfor%}
+               </select>
+               <br><br>
+               <label for="level">Level</label><br>
+               <select id="level" name="level" class='sel' selected='all'>
+                  <option value="all" id='all'>All</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+               </select>
+               <br><br>
+            </div>
+            <input class = 'cns-button' type="submit" value='START'>
+         </form>
+      </section>
+   </body>
+
+</html>

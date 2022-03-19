@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <link rel="stylesheet" type= "text/css" href="{{url_for('static',filename='styles/style.css')}}">
+      <script>
+        const word = '{{chars}}';
+        const lvl = '{{lvl}}';
+        const ct = '{{cate}}';
+        const ln = "{{url_for('begin')}}";
+      </script>
+      <script src="{{url_for('static',filename='main.js')}}"></script> 
+      <meta name="viewport" content="width=device-width"/>
+      <meta charset="utf-8">
+      <title>HANGMAN</title>
+   </head>
+   <body>
+      <main>
+         <script>
+            
+         </script>
+         <article>
+            <div id='rw0'>
+                {{cate}}
+            </div>
+            <div id='rw1'>
+               <div class=column id=left>
+                  <button type=button class='letters' id='lettA' onclick='checkChar("a")'>A</button>
+                  <button type=button class='letters' id='lettE' onclick='checkChar("e")'>E</button>
+                  <button type=button class='letters' id='lettI' onclick='checkChar("i")'>I</button>
+                  <button type=button class='letters' id='lettO' onclick='checkChar("o")'>O</button>
+                  <button type=button class='letters' id='lettU' onclick='checkChar("u")'>U</button>
+               </div>
+               <section class='main_place' id='mn_plc'>
+                  <canvas id='hangman'>
+                  </canvas>
+               </section>
+               <div class='box'>
+                  <div class='column'>
+                     <button type=button class='letters' id='lettB' onclick='checkChar("b")'>B</button>
+                     <button type=button class='letters' id='lettC' onclick='checkChar("c")'>C</button>
+                     <button type=button class='letters' id='lettD' onclick='checkChar("d")'>D</button>
+                     <button type=button class='letters' id='lettF' onclick='checkChar("f")'>F</button>
+                     <button type=button class='letters' id='lettG' onclick='checkChar("g")'>G</button>
+                     <button type=button class='letters' id='lettH' onclick='checkChar("h")'>H</button>
+                     <button type=button class='letters' id='lettJ' onclick='checkChar("j")'>J</button>
+                  </div>
+                  <div class='column'>
+                     <button type=button class='letters' id='lettK' onclick='checkChar("k")'>K</button>
+                     <button type=button class='letters' id='lettL' onclick='checkChar("l")'>L</button>
+                     <button type=button class='letters' id='lettM' onclick='checkChar("m")'>M</button>
+                     <button type=button class='letters' id='lettN' onclick='checkChar("n")'>N</button>
+                     <button type=button class='letters' id='lettP' onclick='checkChar("p")'>P</button>
+                     <button type=button class='letters' id='lettQ' onclick='checkChar("q")'>Q</button>
+                     <button type=button class='letters' id='lettR' onclick='checkChar("r")'>R</button>
+                  </div>
+                  <div class='column'>
+                     <button type=button class='letters' id='lettS' onclick='checkChar("s")'>S</button>
+                     <button type=button class='letters' id='lettT' onclick='checkChar("t")'>T</button>
+                     <button type=button class='letters' id='lettV' onclick='checkChar("v")'>V</button>
+                     <button type=button class='letters' id='lettW' onclick='checkChar("w")'>W</button>
+                     <button type=button class='letters' id='lettX' onclick='checkChar("x")'>X</button>
+                     <button type=button class='letters' id='lettY' onclick='checkChar("y")'>Y</button>
+                     <button type=button class='letters' id='lettZ' onclick='checkChar("z")'>Z</button>
+                  </div>
+               </div>
+            </div>
+            <span class='char'></span>
+            <div id='word'>
+               {%for char in chars%}
+               <span class='char' id='my_char{{loop.index0}}'></span>
+               {%endfor%}
+            </div>
+         </article>
+      </main>
+   </body>
+</html>
